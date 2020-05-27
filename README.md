@@ -1,46 +1,52 @@
-# Huned's opinionated nodejs starter repository for lazy developers
+# SendGrid Contacts Export for Node.js
 
-The instructions below assume you're using MacOS and homebrew, but
-should be easily adaptable to Linux systems.
+[main repo](https://github.com/huned/nodejs-sendgrid-contacts-export)
 
-## Getting Started
+The simplest way to get all your SendGrid contacts as JSON.
+
+## Usage
+
+Use it like this:
+
+    const SendGrid = require(./lib/sendgrid)
+    const sg = new SendGrid('MY API KEY')
+    const contacts = await sg.getContacts()
+    console.log(contacts)
+
+Optionally, specify options using SendGrid's Contacts Export API options. E.g.,
+
+    // See SendGrid's Marketing > Contacts > Exports API doc for details.
+    // https://sendgrid.com/docs/API_Reference/api_v3.html
+    const opts = {
+      "list_ids": [ "string" ],
+      "segment_ids": [ "string" ],
+      "notifications": {
+        "email": "boolean (optional)"
+      },
+      "file_type": "csv",
+      "max_file_size": 5000
+    }
+    await sg.getContacts(opts)
+
+## Command Line Usage
 
 Clone this repo, then:
 
-    # You should use `n` to manage node versions.
-    # Install `n` via `brew`.
-    brew install n
+    SENDGRID_API_KEY=<your api key> npm start
 
-    # Install node via `n`. Clobbers existing node installation in `/usr/local`.
-    # Change the version of node by editing `.n-node-version`
-    n install auto
+And it will print all your contacts as JSON to `stdout`.
 
-    # Copy environment variables file to the right place.
-    cp .env.sample .env
+You can also define `SENDGRID_API_KEY` in a `.env` file instead of at the
+command line, if you wish.
 
-    # Run it
-    npm test
-    npm start
+## Known Issues
 
-## Library Choices:
+* No tests yet (maybe you can submit a PR?!)
 
-These come installed:
+## Author
 
-* debug: better debug printing
-* lodash: utility stuff
-* dotenv: for loading environment variables from `.env`
-* mocha: for testing
-* sinon: for mocking and stubbing
-* standard: enforces standard js style
+[Huned Botee](https://github.com/huned)
 
-Use these as needed in projects. They're of reasonable quality.
+## License
 
-* numeral: number parsing and formatting
-* moment: date/time parsing and formatting
-* sequelize: orm
-* pg: for sequelize
-* pg-hstore: for sequelize
-* bent: making http requests
-* cheerio: parsing html
-* puppeteer: web scraping via headless chromium
-* pdfjs-dist: pdf parsing and rendering
+MIT
