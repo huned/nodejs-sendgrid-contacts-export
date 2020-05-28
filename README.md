@@ -4,6 +4,10 @@ Main repo: [https://github.com/huned/nodejs-sendgrid-contacts-export](https://gi
 
 The simplest way to get all your SendGrid contacts as JSON.
 
+## Installation
+
+    npm install sendgrid-contacts-export
+
 ## Usage
 
 Use it like this:
