@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-starter",
+  "name": "sendgrid-contacts-export",
   "version": "0.0.1",
-  "description": "Huned's opinionated nodejs starter repository",
+  "description": "The simplest way to get all your SendGrid contacts as JSON.",
   "main": "index.js",
   "scripts": {
     "test": "standard --env mocha && NODE_ENV=test mocha --recursive",
@@ -9,12 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/huned/nodejs-starter.git"
+    "url": "git://github.com/huned/nodejs-sendgrid-contacts-export.git"
   },
   "keywords": [
-    "node.js",
-    "starter",
-    "template"
+    "sendgrid"
   ],
   "author": "Huned Botee <huned@hunedbotee.com> (https://hunedbotee.com)",
   "license": "MIT",
