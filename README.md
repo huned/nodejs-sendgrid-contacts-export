@@ -36,7 +36,12 @@ Clone this repo, then:
 
 And it will print all your contacts as JSON to `stdout`.
 
-You can also define `SENDGRID_API_KEY` in a `.env` file instead of at the
+You can also set `SENDGRID_LIST_IDS` and `SENDGRID_SEGMENT_IDS` to comma
+separated list/segment ids. E.g.,
+
+    SENDGRID_API_KEY=<your api key> SENDGRID_LIST_IDS=<list1 id>,<list2 id> npm start
+
+You can also define each of these environment in a `./.env` file instead of at the
 command line, if you wish.
 
 ## Known Issues
