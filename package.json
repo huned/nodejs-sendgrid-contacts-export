@@ -20,7 +20,7 @@
     "colors": "^1.4.0",
     "mocha": "^10.2.0",
     "sinon": "^9.0.2",
-    "standard": "^14.3.4"
+    "standard": "^17.1.2"
   },
   "dependencies": {
     "async-gzip-gunzip": "^1.0.1",
